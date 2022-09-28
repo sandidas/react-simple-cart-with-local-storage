@@ -17,7 +17,7 @@ const Cart = ({ cart }) => {
   const tax = (total * 0.1).toFixed(2); // toFixed convert to text
   const grandTotal = total + shipping + parseFloat(tax);
   return (
-    <div>
+    <div className="sticky top-20">
       <h4 className="text-xl text-red-400	">Order Summery </h4>
       <p>Selected Items: {totalQuantity}</p>
       <p>Total Price: ${total} </p>
