@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <div>
+      <div className='max-w-screen-xl mx-auto'>
         <Shop></Shop>
       </div>
       

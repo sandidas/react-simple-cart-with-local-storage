@@ -17,17 +17,24 @@ const Cart = ({ cart, deleteAllCartItems }) => {
   const tax = (total * 0.1).toFixed(2); // toFixed convert to text
   const grandTotal = total + shipping + parseFloat(tax);
   return (
-    <div className="sticky top-20">
-      <h4 className="text-xl text-red-400	">Order Summery </h4>
-      <p>Selected Items: {totalQuantity}</p>
-      <p>Total Price: ${total} </p>
-      <p>Total Shipping: ${shipping} </p>
-      <p>Tax: ${tax} </p>
-      <p>
-        <b>Grand Total: {grandTotal.toFixed(2)} </b>
-      </p>
-      <button onClick={deleteAllCartItems} class="btn btn-secondary mt-5">Clear Cart</button>
-
+    <div className="sticky top-40">
+      <div className="card bg-slate-900 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">Order Summery</h2>
+          <p>Selected Items: {totalQuantity}</p>
+          <p>Total Price: ${total} </p>
+          <p>Total Shipping: ${shipping} </p>
+          <p>Tax: ${tax} </p>
+          <p>
+            <b>Grand Total: {grandTotal.toFixed(2)} </b>
+          </p>
+          <div className="card-actions justify-end">
+            <button onClick={deleteAllCartItems} className="btn btn-secondary mt-5">
+              Clear Cart
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
