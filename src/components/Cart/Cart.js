@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, deleteAllCartItems }) => {
   //   console.log(cart);
   // ERROR it's comes empty array while card not call
   // 49.3 Same as teacher
@@ -26,6 +26,8 @@ const Cart = ({ cart }) => {
       <p>
         <b>Grand Total: {grandTotal.toFixed(2)} </b>
       </p>
+      <button onClick={deleteAllCartItems} class="btn btn-secondary mt-5">Clear Cart</button>
+
     </div>
   );
 };

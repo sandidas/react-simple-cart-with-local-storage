@@ -46,4 +46,8 @@ const cartRemoveItemFromLocalStorage = (id) => {
   }
 };
 
-export { cartAddToLocalStorage, cartRemoveItemFromLocalStorage, getStoredCart };
+const deleteStoredAllCartItems = () => {
+  localStorage.clear("site-cart");
+};
+
+export { deleteStoredAllCartItems, cartAddToLocalStorage, cartRemoveItemFromLocalStorage, getStoredCart };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { cartAddToLocalStorage, getStoredCart } from "../../utilities/localstorage";
+import { cartAddToLocalStorage, deleteStoredAllCartItems, getStoredCart } from "../../utilities/localstorage";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 
@@ -64,6 +64,12 @@ const Shop = () => {
     // use a dependency. becasue this useEffect depends on products load or not.
   }, [products]);
 
+  // function to deleted a cart items
+  const deleteAllCartItems = () => {
+    deleteStoredAllCartItems();
+    setCart([]);
+  };
+
   return (
     <div>
       <div className="grid grid-cols-5 gap-4 mt-5">
@@ -77,7 +83,7 @@ const Shop = () => {
         </div>
         <div>
           {/* Create a Cart component to send/show cart item  */}
-          <Cart cart={cart}></Cart>
+          <Cart cart={cart} deleteAllCartItems={deleteAllCartItems}></Cart>
         </div>
       </div>
     </div>
